@@ -1,4 +1,4 @@
-module github.com/hashicorp/terraform-provider-scaffolding-framework
+module github.com/ackack-io/terraform-provider-ackack
 
 go 1.25.5
 
