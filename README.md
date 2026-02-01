@@ -2,7 +2,7 @@
 This is the official Terraform provider for [ackack.io](https://ackack.io).
 
 This provider requires an API key to use. Don't have one? 
-[Sign up for free](https://ackack.io/signup) and get 5 free monitors!
+[Sign up for free](https://ackack.io/signup) and get 3 free monitors with Slack and Discord alerts!
 
 ## Using the provider
 
