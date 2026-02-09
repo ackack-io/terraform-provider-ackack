@@ -525,7 +525,7 @@ func normalizeTimestamp(ts string) string {
 	if err != nil {
 		return ts
 	}
-	return t.Truncate(time.Microsecond).Format("2006-01-02T15:04:05.999999Z07:00")
+	return t.Round(time.Microsecond).Format("2006-01-02T15:04:05.999999Z07:00")
 }
 
 func (r *MonitorResource) updateModelFromResponse(data *MonitorResourceModel, monitor *client.Monitor) {
