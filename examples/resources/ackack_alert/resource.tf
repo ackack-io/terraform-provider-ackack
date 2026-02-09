@@ -1,13 +1,13 @@
 # Email Alert
 resource "ackack_alert" "email" {
-  monitor_id          = ackack_monitor.website.id
-  type                = "email"
-  target              = "alerts@example.com"
-  is_enabled          = true
-  trigger_threshold   = 2
-  recovery_threshold  = 2
+  monitor_id           = ackack_monitor.website.id
+  type                 = "email"
+  target               = "alerts@example.com"
+  is_enabled           = true
+  trigger_threshold    = 2
+  recovery_threshold   = 2
   min_interval_minutes = 15
-  include_details     = true
+  include_details      = true
 }
 
 # Slack Alert
