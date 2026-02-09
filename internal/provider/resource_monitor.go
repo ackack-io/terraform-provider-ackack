@@ -6,6 +6,7 @@ package provider
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/ackack-io/terraform-provider-ackack/internal/client"
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
@@ -517,6 +518,16 @@ func (r *MonitorResource) buildUpdateRequest(data *MonitorResourceModel) client.
 	return req
 }
 
+// normalizeTimestamp parses a timestamp and re-formats it with microsecond
+// precision so that values stored in state always match what the API returns.
+func normalizeTimestamp(ts string) string {
+	t, err := time.Parse(time.RFC3339Nano, ts)
+	if err != nil {
+		return ts
+	}
+	return t.Truncate(time.Microsecond).Format("2006-01-02T15:04:05.999999Z07:00")
+}
+
 func (r *MonitorResource) updateModelFromResponse(data *MonitorResourceModel, monitor *client.Monitor) {
 	data.ID = types.StringValue(monitor.ID)
 	data.Name = types.StringValue(monitor.Name)
@@ -527,8 +538,8 @@ func (r *MonitorResource) updateModelFromResponse(data *MonitorResourceModel, mo
 	data.Retries = types.Int64Value(int64(monitor.Retries))
 	data.Status = types.StringValue(monitor.Status)
 	data.UptimePercentage = types.Float64Value(monitor.UptimePercentage)
-	data.CreatedAt = types.StringValue(monitor.CreatedAt)
-	data.UpdatedAt = types.StringValue(monitor.UpdatedAt)
+	data.CreatedAt = types.StringValue(normalizeTimestamp(monitor.CreatedAt))
+	data.UpdatedAt = types.StringValue(normalizeTimestamp(monitor.UpdatedAt))
 
 	// Set optional string fields - use null if empty to ensure known value
 	if monitor.GeneralRegion != "" {
@@ -543,7 +554,7 @@ func (r *MonitorResource) updateModelFromResponse(data *MonitorResourceModel, mo
 	}
 	// Computed field - must always be set to a known value
 	if monitor.LastChecked != "" {
-		data.LastChecked = types.StringValue(monitor.LastChecked)
+		data.LastChecked = types.StringValue(normalizeTimestamp(monitor.LastChecked))
 	} else {
 		data.LastChecked = types.StringNull()
 	}
