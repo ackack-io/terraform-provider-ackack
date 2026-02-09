@@ -27,9 +27,9 @@ type MonitorResultsDataSource struct {
 
 // MonitorResultsDataSourceModel describes the data source data model.
 type MonitorResultsDataSourceModel struct {
-	MonitorID types.String               `tfsdk:"monitor_id"`
-	Limit     types.Int64                `tfsdk:"limit"`
-	Results   []MonitorResultItemModel   `tfsdk:"results"`
+	MonitorID types.String             `tfsdk:"monitor_id"`
+	Limit     types.Int64              `tfsdk:"limit"`
+	Results   []MonitorResultItemModel `tfsdk:"results"`
 }
 
 // MonitorResultItemModel describes a single check result.

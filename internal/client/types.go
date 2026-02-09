@@ -280,20 +280,20 @@ type ListReportsResponse struct {
 
 // MonitorResult represents a single check result.
 type MonitorResult struct {
-	ID                       int    `json:"id,omitempty"`
-	MonitorID                string `json:"monitor_id,omitempty"`
-	Status                   string `json:"status,omitempty"`
-	ResponseTime             int    `json:"response_time,omitempty"`
-	ResponseSizeBytes        int    `json:"response_size_bytes,omitempty"`
-	Timestamp                string `json:"timestamp,omitempty"`
-	Region                   string `json:"region,omitempty"`
-	WorkerID                 string `json:"worker_id,omitempty"`
-	Message                  string `json:"message,omitempty"`
-	ErrorType                string `json:"error_type,omitempty"`
-	StatusCode               int    `json:"status_code,omitempty"`
-	DNSResponse              string `json:"dns_response,omitempty"`
-	TLSVersion               string `json:"tls_version,omitempty"`
-	CertificateExpirationDays int   `json:"certificate_expiration_days,omitempty"`
+	ID                        int    `json:"id,omitempty"`
+	MonitorID                 string `json:"monitor_id,omitempty"`
+	Status                    string `json:"status,omitempty"`
+	ResponseTime              int    `json:"response_time,omitempty"`
+	ResponseSizeBytes         int    `json:"response_size_bytes,omitempty"`
+	Timestamp                 string `json:"timestamp,omitempty"`
+	Region                    string `json:"region,omitempty"`
+	WorkerID                  string `json:"worker_id,omitempty"`
+	Message                   string `json:"message,omitempty"`
+	ErrorType                 string `json:"error_type,omitempty"`
+	StatusCode                int    `json:"status_code,omitempty"`
+	DNSResponse               string `json:"dns_response,omitempty"`
+	TLSVersion                string `json:"tls_version,omitempty"`
+	CertificateExpirationDays int    `json:"certificate_expiration_days,omitempty"`
 }
 
 // GetResultsResponse is the response for getting monitor results.

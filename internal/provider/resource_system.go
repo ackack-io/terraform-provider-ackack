@@ -413,7 +413,7 @@ func (r *SystemResource) updateModelFromResponse(ctx context.Context, data *Syst
 	}
 }
 
-// difference returns elements in a that are not in b
+// difference returns elements in a that are not in b.
 func difference(a, b []string) []string {
 	bMap := make(map[string]bool)
 	for _, v := range b {

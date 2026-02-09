@@ -27,9 +27,9 @@ type MonitorIncidentsDataSource struct {
 
 // MonitorIncidentsDataSourceModel describes the data source data model.
 type MonitorIncidentsDataSourceModel struct {
-	MonitorID types.String         `tfsdk:"monitor_id"`
-	Limit     types.Int64          `tfsdk:"limit"`
-	Incidents []IncidentItemModel  `tfsdk:"incidents"`
+	MonitorID types.String        `tfsdk:"monitor_id"`
+	Limit     types.Int64         `tfsdk:"limit"`
+	Incidents []IncidentItemModel `tfsdk:"incidents"`
 }
 
 // IncidentItemModel describes a single incident.

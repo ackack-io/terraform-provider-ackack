@@ -27,11 +27,11 @@ type NotificationsDataSource struct {
 
 // NotificationsDataSourceModel describes the data source data model.
 type NotificationsDataSourceModel struct {
-	Page          types.Int64                   `tfsdk:"page"`
-	PageSize      types.Int64                   `tfsdk:"page_size"`
-	Total         types.Int64                   `tfsdk:"total"`
-	TotalPages    types.Int64                   `tfsdk:"total_pages"`
-	Notifications []NotificationItemModel       `tfsdk:"notifications"`
+	Page          types.Int64             `tfsdk:"page"`
+	PageSize      types.Int64             `tfsdk:"page_size"`
+	Total         types.Int64             `tfsdk:"total"`
+	TotalPages    types.Int64             `tfsdk:"total_pages"`
+	Notifications []NotificationItemModel `tfsdk:"notifications"`
 }
 
 // NotificationItemModel describes a single notification history record.
