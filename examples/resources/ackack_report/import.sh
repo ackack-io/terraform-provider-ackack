@@ -1,0 +1,1 @@
+terraform import ackack_report.monthly_uptime rpt_abc123
